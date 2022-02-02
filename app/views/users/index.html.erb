@@ -9,11 +9,38 @@
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
+<body class="w3-light-grey w3-content" style="max-width:2000px">
+
+<head>
+<style>
+#userTable {
+  font-family: "Raleway", "Raleway", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#userTable td, #userTable th {
+  border: 1.5px solid #ddd;
+  padding: 8px;
+}
+
+#userTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#userTable tr:hover {background-color: #ddd;}
+
+#userTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #1A1A1A;
+  color: white;
+}
+</style>
+</head>
 
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
+<div class="w3-main" style="margin-left:100px">
 
 
   <!-- Header -->
@@ -23,15 +50,37 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <p style="color: green"><%= notice %></p>
 
 
+
+
 <div id="users">
+<table id="userTable">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>E-mail</th>
+    <th>Password</th>
+    <th>Show Individual</th>
+  </tr>
+
+  <% @users = User.all%>
+
   <% @users.each do |user| %>
-    <%= render user %>
+    <tr>
+    <td><%= user.id %></td>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.password %></td>
+    <td>
     <p>
       <%= link_to "Show this user", user %>
     </p>
+    </td>
+    </tr>
+    
   <% end %>
+  </table>
 </div>
-
+<br>
 <a href='http://localhost:3000/users/new' class="w3-button w3-white w3-padding-32"><i class="fa fa-diamond w3-margin-right"></i>New user</a>
 <br>
 <br>

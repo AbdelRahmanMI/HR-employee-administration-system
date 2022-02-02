@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_31_112206) do
+ActiveRecord::Schema.define(version: 2022_02_02_120648) do
 
   create_table "abdelrahmen", force: :cascade do |t|
     t.string "title"
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 2022_01_31_112206) do
   create_table "missions", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.string "startDate"
-    t.string "finishDate"
+    t.date "startDate"
+    t.date "finishDate"
     t.string "attribut"
     t.string "team"
     t.string "status"
