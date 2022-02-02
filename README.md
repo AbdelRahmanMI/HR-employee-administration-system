@@ -9,25 +9,17 @@ Second phase was to make index for each table and its done in the code deliverie
 
 Third phase which is making basic landing page and this done and showed in the video attached in google drive 
 
-Link of the video : https://drive.google.com/file/d/19T-j79e4UdoPKvMklUVgOqTzhXcoTAsc/view?usp=sharing
+Link of the First video : https://drive.google.com/file/d/19T-j79e4UdoPKvMklUVgOqTzhXcoTAsc/view?usp=sharing
 
-Things you may want to cover:
+===================================================================================================================================
 
-* Ruby version
+Second Submission:
 
-* System dependencies
+- We converted the scafoold indexing to new indexing with UI tables in the GUI and this shown in the second video with the provided link 
 
-* Configuration
+- We make anew assosiation betweeen models and this will be shown in the code models
 
-* Database creation
+- We made anew validations for each model to take accurate data from GUI and this shown in the code Models
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# HR-employee-administration-system
+Link of the Second video : https://drive.google.com/file/d/1FUS6zk5FwcXVLPcf3efZOToTqF370ex8/view?usp=sharing
