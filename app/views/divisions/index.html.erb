@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<head>
+<style>
+#divisionTable {
+  font-family: "Raleway", "Raleway", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#divisionTable td, #divisionTable th {
+  border: 1.5px solid #ddd;
+  padding: 8px;
+}
+
+#divisionTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#divisionTable tr:hover {background-color: #ddd;}
+
+#divisionTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #1A1A1A;
+  color: white;
+}
+</style>
+</head>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+
+  <!-- Header -->
+  <header id="Welcome to HR Employee administration system ">
+    <div class="w3-container">
+    <h1><b>Divisions</b></h1>
+<p style="color: green"><%= notice %></p>
+
+<div id="divisions">
+<table id="divisionTable">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Teams</th>
+    <th>Manager</th>
+    <th>Show Individual</th>
+  </tr>
+
+  <% @divisions = Division.all%>
+
+  <% @divisions.each do |division| %>
+    <tr>
+    <td><%= division.id %></td>
+    <td><%= division.name %></td>
+    <td><%= division.description %></td>
+    <td><%= division.teams %></td>
+    <td><%= division.manager %></td>
+    <td>
+    <p>
+      <%= link_to "Show this division", division %>
+    </p>
+    </td>
+    </tr>
+    
+  <% end %>
+  </table>
+</div>
+<br>
+<a href='http://localhost:3000/divisions/new' class="w3-button w3-white w3-padding-32"><i class="fa fa-diamond w3-margin-right"></i>New division</a>
+<br>
+<br>
+<a href='http://localhost:3000' class="w3-button w3-white w3-padding-32"><i class="fa fa-diamond w3-margin-right"></i>Back to main Form</a>
