@@ -31,14 +31,10 @@
     <%= form.text_field :finishDate %>
   </div>
 
-  <div>
-    <%= form.label :attribut, style: "display: block" %>
-    <%= form.text_field :attribut %>
-  </div>
 
-  <div>
-    <%= form.label :team, style: "display: block" %>
-    <%= form.text_field :team %>
+  <div class="form-group m-0 col-md-6">   
+    <%= form.label :team, class:"text-left"%> 
+    <%= form.select :team , Team.all.collect { |p| [ p.name, p.id ] } %>
   </div>
 
   <div>

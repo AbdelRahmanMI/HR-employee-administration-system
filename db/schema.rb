@@ -10,19 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_120648) do
-
-  create_table "abdelrahmen", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "start_date"
-    t.string "finish_date"
-    t.string "attribute"
-    t.string "team"
-    t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2022_02_22_203349) do
 
   create_table "divisions", force: :cascade do |t|
     t.string "name"
@@ -41,6 +29,10 @@ ActiveRecord::Schema.define(version: 2022_02_02_120648) do
     t.string "employment_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "team_id"
+    t.integer "division_id"
+    t.index ["division_id"], name: "index_employees_on_division_id"
+    t.index ["team_id"], name: "index_employees_on_team_id"
   end
 
   create_table "missions", force: :cascade do |t|
@@ -53,60 +45,14 @@ ActiveRecord::Schema.define(version: 2022_02_02_120648) do
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "targe_ts", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "start_date"
-    t.string "finish_date"
-    t.string "attribute"
-    t.string "team"
-    t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "target_reqs", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "start_date"
-    t.string "finish_date"
-    t.string "attribute"
-    t.string "team"
-    t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "targets", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "start_date"
-    t.string "finish_date"
-    t.string "attribute"
-    t.string "team"
-    t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "targt_reqs", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "start_date"
-    t.string "finish_date"
-    t.string "attribute"
-    t.string "team"
-    t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "team_id"
+    t.index ["team_id"], name: "index_missions_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "members"
+    t.text "members"
     t.string "team_lead"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -120,4 +66,5 @@ ActiveRecord::Schema.define(version: 2022_02_02_120648) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "employees", "teams"
 end

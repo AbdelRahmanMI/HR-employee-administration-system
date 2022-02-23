@@ -19,14 +19,10 @@
     <%= mission.finishDate %>
   </p>
 
-  <p>
-    <strong>Attribut:</strong>
-    <%= mission.attribut %>
-  </p>
 
   <p>
     <strong>Team:</strong>
-    <%= mission.team %>
+    <%= Team.find( mission.team).name %>
   </p>
 
   <p>

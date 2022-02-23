@@ -20,8 +20,13 @@
   </p>
 
   <p>
+    <strong>Team Name:</strong>
+    <%= Team.find(employee.team_id).name %>
+  </p>
+
+  
+  <p>
     <strong>Employment status:</strong>
     <%= employee.employment_status %>
   </p>
-
 </div>

@@ -21,14 +21,20 @@
     <%= form.text_field :description %>
   </div>
 
-  <div>
-    <%= form.label :members, style: "display: block" %>
-    <%= form.text_field :members %>
-  </div>
+  
+    <%# <%= form.label :members, style: "display: block" %>
+    <%# <%= form.text_field :members %> 
 
   <div>
-    <%= form.label :team_lead, style: "display: block" %>
-    <%= form.text_field :team_lead %>
+    <%= form.label :members , style: "display: block" %>    
+    <%= form.select :members, Employee.all.collect{ |emp| [emp.name,emp.id] },{:include_hidden => false},{ :multiple => true} %>
+  </div>
+
+ 
+
+  <div class="form-group m-0 col-md-6">   
+    <%= form.label :team_lead , class:"text-left"%> 
+    <%= form.select :team_lead , Employee.all.collect { |p| [ p.name, p.id ] } %>
   </div>
 
   <div>

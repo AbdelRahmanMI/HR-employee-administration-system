@@ -56,7 +56,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <th>Description</th>
     <th>Start Date</th>
     <th>Finish Date</th>
-    <th>Attribute</th>
     <th>Team</th>
     <th>Status</th>
     <th>Show Individual</th>
@@ -69,8 +68,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <td><%= mission.description %></td>
     <td><%= mission.startDate %></td>
     <td><%= mission.finishDate %></td>
-    <td><%= mission.attribut %></td>
-    <td><%= mission.team %></td>
+    <td><%= Team.find( mission.team).name  %></td>
     <td><%= mission.status %></td>
     <td>
     <p>

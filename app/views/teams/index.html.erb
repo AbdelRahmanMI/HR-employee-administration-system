@@ -69,7 +69,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <td><%= team.name %></td>
     <td><%= team.description %></td>
     <td><%= team.members %> </td>
-    <td><%= team.team_lead %> </td>
+    <td><%=Employee.find( team.team_lead).name %> </td>
     <td>
     <p>
       <%= link_to "Show this team", team %>

@@ -1,6 +1,6 @@
 class Employee < ApplicationRecord
-    belongs_to :division
-    belongs_to :team
+    has_one :division
+    has_one :team
 
     validates :name,  length: { minimum: 5 ,maximum: 100 }
     validates_format_of :email, with: /\A[^@\s]+@[^@\s]+\z/ 
