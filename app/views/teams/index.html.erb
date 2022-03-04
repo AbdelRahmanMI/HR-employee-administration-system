@@ -40,7 +40,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px">
-
+<a href='http://localhost:3000/users/sign_out' class="w3-button w3-white w3-padding-2"></i>SignOut</a>
 
   <!-- Header -->
   <header id="Welcome to HR Employee administration system ">
@@ -68,7 +68,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <td><%= team.id %></td>
     <td><%= team.name %></td>
     <td><%= team.description %></td>
-    <td><%= team.members %> </td>
+    <td><%x=2%>
+    <%while x<team.members.length%>
+    <%= Employee.find(team.members[x].to_i).name  %>
+    <% x = x+5%>
+    <%if x<team.members.length%>
+    -
+    <%end%>
+    <%end%> </td>
     <td><%=Employee.find( team.team_lead).name %> </td>
     <td>
     <p>

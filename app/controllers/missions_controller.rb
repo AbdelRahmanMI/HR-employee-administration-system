@@ -1,5 +1,6 @@
 class MissionsController < ApplicationController
   before_action :set_mission, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /missions or /missions.json
   def index

@@ -8,9 +8,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
+
+<% if user_signed_in?%>
+  <a href='http://localhost:3000/users/sign_out' class="w3-button w3-white w3-padding-2"></i>SignOut</a>
+<%else%>
+  <a href='http://localhost:3000/users/sign_up' class="w3-button w3-white w3-padding-2"></i>SignUP</a>
+  <a href='http://localhost:3000/users/sign_in' class="w3-button w3-white w3-padding-2"></i>Log In</a>
+<%end%>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px">
@@ -36,5 +44,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <a href='http://localhost:3000/teams' class="w3-button w3-white w3-padding-32"><i class="fa fa-diamond w3-margin-right"></i>Teams</a>
     </div>
     </div>
+    
   </header>
   
