@@ -1,0 +1,21 @@
+<div id="<%= dom_id user %>">
+
+  <%= image_tag user.image ,style: "max-width: 250px;"%> 
+  <p>
+    <strong style="color : Red"><%= t 'users.index.Name' %>:</strong>
+    <%= user.name %>
+  </p>
+
+  <p>
+    <strong><%= t 'users.index.Email' %>:</strong>
+    <%= user.email %>
+  </p>
+
+  <p>
+    <strong><%= t 'users.index.Password'%>:</strong>
+    <%= user.password %>
+  </p>
+
+</div>
+
+

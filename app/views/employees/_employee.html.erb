@@ -1,0 +1,32 @@
+<div id="<%= dom_id employee %>">
+  <p>
+    <strong style="color : Red"><%= t 'employee.index.name' %>:</strong>
+    <%= employee.name %>
+  </p>
+
+  <p>
+    <strong><%= t 'employee.index.email'%>:</strong>
+    <%= employee.email %>
+  </p>
+
+  <p>
+    <strong><%= t 'employee.index.job'%>:</strong>
+    <%= employee.job %>
+  </p>
+
+  <p>
+    <strong><%= t 'employee.index.salary'%>:</strong>
+    <%= employee.salary %>
+  </p>
+
+  <p>
+    <strong><%= t 'employee.index.team_id'%>:</strong>
+    <%= Team.find(employee.team_id).name %>
+  </p>
+
+  
+  <p>
+    <strong><%= t 'employee.index.status'%>:</strong>
+    <%= employee.employment_status %>
+  </p>
+</div>
