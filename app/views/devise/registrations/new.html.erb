@@ -13,10 +13,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
-
-<a href='http://localhost:3000/users/sign_up' class="w3-button w3-white w3-padding-2"></i>SignUP</a>
-<%= button_to "LogIn", new_user_session_path%>
-<%= button_to "SignOut", destroy_user_session_path%>
+<% if user_signed_in?%>
+  <a href='http://localhost:3000/users/sign_out' class="w3-button w3-white w3-padding-2"></i><%= t 'button.signout' %></a>
+<%else%>
+  <a href='http://localhost:3000/users/sign_up' class="w3-button w3-white w3-padding-2"></i><%= t 'button.signup' %></a>
+  <a href='http://localhost:3000/users/sign_in' class="w3-button w3-white w3-padding-2"></i><%= t 'button.signin' %></a>
+<%end%>
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px">
 
@@ -26,7 +28,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :image %><br />
+    <%= f.label I18n.t('button.Image') %><br />
     <%= f.file_field :image, autofocus: true, autocomplete: "image" %>
   </div>
 
@@ -54,7 +56,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit I18n.t('button.signup') %>
   </div>
 <% end %>
 
