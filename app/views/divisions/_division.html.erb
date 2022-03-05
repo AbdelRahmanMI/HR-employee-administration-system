@@ -1,17 +1,17 @@
 
 <div id="<%= dom_id division %>">
   <p>
-    <strong style="color : Red"s>Name:</strong>
+    <strong style="color : Red"><%= t 'division.index.name' %>:</strong>
     <%= division.name %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong><%= t 'division.index.description' %>:</strong>
     <%= division.description %>
   </p>
 
   <p>
-    <strong>Teams:</strong>
+    <strong><%= t 'division.index.teams' %>:</strong>
     <%x=2%>
     <%while x<division.teams.length%>
       <%= Team.find(division.teams[x].to_i).name %> 
@@ -23,7 +23,7 @@
   </p>
 
   <p>
-    <strong>Manager:</strong>
+    <strong><%= t 'division.index.manager' %>:</strong>
     <%= Employee.find(division.manager).name%>
   </p>
 

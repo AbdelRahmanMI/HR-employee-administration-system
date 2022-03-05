@@ -39,13 +39,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </head>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
-<a href='http://localhost:3000/users/sign_out' class="w3-button w3-white w3-padding-2"></i>SignOut</a>
+<div class="w3-main" style="margin-left:30px">
+<a href='http://localhost:3000/users/sign_out' class="w3-button w3-white w3-padding-2"></i><%= t 'button.signout' %></a>
 
   <!-- Header -->
   <header id="Welcome to HR Employee administration system ">
     <div class="w3-container">
-    <h1><b>Teams</b></h1>
+    <h1><b><%= t 'team.index.teams' %></b></h1>
 <p style="color: green"><%= notice %></p>
 
 
@@ -53,12 +53,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <div id="teams">
 <table id="teamTable">
   <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Members</th>
-    <th>Team Leader</th>
-    <th>Show Individual</th>
+    <th><%= t 'team.index.id' %></th>
+    <th><%= t 'team.index.name' %></th>
+    <th><%= t 'team.index.description' %></th>
+    <th><%= t 'team.index.members' %></th>
+    <th><%= t 'team.index.team_lead' %></th>
+    <th><%= t 'users.index.Show Individual' %></th>
   </tr>
 
   <% @teams = Team.all%>
@@ -79,7 +79,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <td><%=Employee.find( team.team_lead).name %> </td>
     <td>
     <p>
-      <%= link_to "Show this team", team %>
+      <%= link_to I18n.t('team.index.Show this team'), team %>
     </p>
     </td>
     </tr>
@@ -88,7 +88,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </div>
 
 <br>
-<a href='http://localhost:3000/teams/new' class="w3-button w3-white w3-padding-32"><i class="fa fa-diamond w3-margin-right"></i>New team</a>
+<a href='http://localhost:3000/teams/new' class="w3-button w3-white w3-padding-32"><i class="fa fa-diamond w3-margin-right"></i><%= t 'button.newteam' %></a>
 <br>
 <br>
-<a href='http://localhost:3000' class="w3-button w3-white w3-padding-32"><i class="fa fa-diamond w3-margin-right"></i>Back to main Form</a>
+<a href='http://localhost:3000' class="w3-button w3-white w3-padding-32"><i class="fa fa-diamond w3-margin-right"></i><%= t 'button.back' %></a>

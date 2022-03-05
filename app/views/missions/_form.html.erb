@@ -12,33 +12,33 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
+    <%= form.label I18n.t('target.index.title'), style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label I18n.t('target.index.description'), style: "display: block" %>
     <%= form.text_field :description %>
   </div>
 
   <div>
-    <%= form.label :startDate, style: "display: block" %>
+    <%= form.label I18n.t('target.index.start'), style: "display: block" %>
     <%= form.text_field :startDate %>
   </div>
 
   <div>
-    <%= form.label :finishDate, style: "display: block" %>
+    <%= form.label I18n.t('target.index.finish'), style: "display: block" %>
     <%= form.text_field :finishDate %>
   </div>
 
 
   <div class="form-group m-0 col-md-6">   
-    <%= form.label :team, class:"text-left"%> 
+    <%= form.label I18n.t('target.index.team'), class:"text-left"%> 
     <%= form.select :team , Team.all.collect { |p| [ p.name, p.id ] } %>
   </div>
 
   <div>
-    <%= form.label :status, style: "display: block" %>
+    <%= form.label I18n.t('target.index.status'), style: "display: block" %>
     <%= form.text_field :status %>
   </div>
 

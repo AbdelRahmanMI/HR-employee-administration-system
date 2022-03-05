@@ -23,7 +23,7 @@
   </div>
 
   <div>
-    <%= form.label :teams , style: "display: block" %>    
+    <%= form.label I18n.t('division.index.teams') , style: "display: block" %>    
     <%= form.select :teams, Team.all.collect{ |t| [t.name,t.id] },{:include_hidden => false},{ :multiple => true} %>
   </div>
   

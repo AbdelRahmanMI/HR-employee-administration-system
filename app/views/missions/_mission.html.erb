@@ -1,32 +1,32 @@
 <div id="<%= dom_id mission %>">
   <p>
-    <strong>Title:</strong>
+    <strong><%= t 'target.index.title' %>:</strong>
     <%= mission.title %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong><%= t 'target.index.description' %>:</strong>
     <%= mission.description %>
   </p>
 
   <p>
-    <strong>Startdate:</strong>
+    <strong><%= t 'target.index.start' %>:</strong>
     <%= mission.startDate %>
   </p>
 
   <p>
-    <strong>Finishdate:</strong>
+    <strong><%= t 'target.index.finish' %>:</strong>
     <%= mission.finishDate %>
   </p>
 
 
   <p>
-    <strong>Team:</strong>
+    <strong><%= t 'target.index.team' %>:</strong>
     <%= Team.find( mission.team).name %>
   </p>
 
   <p>
-    <strong>Status:</strong>
+    <strong><%= t 'target.index.status' %>:</strong>
     <%= mission.status %>
   </p>
 

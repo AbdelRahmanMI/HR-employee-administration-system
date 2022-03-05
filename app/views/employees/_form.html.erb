@@ -32,13 +32,13 @@
   </div>
 
   <div>
-    <%= form.label :employment_status, style: "display: block" %>
+    <%= form.label I18n.t('employee.index.status'), style: "display: block" %>
     <%= form.text_field :employment_status %>
   </div>
   <br>
   <br>
   <div class="form-group m-0 col-md-6">   
-    <%= form.label :team_id , class:"text-left"%> 
+    <%= form.label I18n.t('employee.index.team_id') , class:"text-left"%> 
     <%= form.select :team_id, Team.all.collect { |p| [ p.name, p.id ] } %>
   </div>
   <br>
