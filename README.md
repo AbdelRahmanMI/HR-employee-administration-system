@@ -68,5 +68,6 @@ We made some changes using BootStrap version 4 and this is what we added :-
 *	Side navigation bar
 *	Footer
 *	Tables with columns shown at the mockup that list down the items of the corresponding model
+*	Buttons for languages in the footer
 
-- Link of the Fourth Video : 
+- Link of the Fourth Video : https://drive.google.com/file/d/1ewKrH8Cv28Rb0ICKoNeIBAbXLlQTVVbH/view?usp=sharing
