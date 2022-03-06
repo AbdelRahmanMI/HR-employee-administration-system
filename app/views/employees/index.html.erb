@@ -1,58 +1,15 @@
-<!DOCTYPE html>
-<html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
-
-<head>
-<style>
-#employeesTable {
-  font-family: "Raleway", "Raleway", sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#employeesTable td, #employeesTable th {
-  border: 1.5px solid #ddd;
-  padding: 8px;
-}
-
-#employeesTable tr:nth-child(even){background-color: #f2f2f2;}
-
-#employeesTable tr:hover {background-color: #ddd;}
-
-#employeesTable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #1A1A1A;
-  color: white;
-}
-</style>
-</head>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:30px">
-<a href='http://localhost:3000/users/sign_out' class="w3-button w3-white w3-padding-2"></i><%= t 'button.signout' %></a>
-
-  <!-- Header -->
-  <header id="Welcome to HR Employee administration system ">
-    <div class="w3-container">
+<div class="container">
     <h1><b><%= t 'employee.index.emp' %></b></h1>
-
-<p style="color: green"><%= notice %></p>
-
-
-<div id="employees">
-<table id="employeesTable">
-  <tr>
+    <a href='http://localhost:3000/employees/new' class="btn btn-primary pull-right"><%= t 'button.newemp'%></a>
+    <a href='http://localhost:3000' class="btn btn-success"><%= t 'button.back'%></a>
+</div>
+<br>
+<div class="table-wrapper-scroll-y my-custom-scrollbar" style="height: 525px;overflow: scroll;">
+<table id="dtDynamicVerticalScrollExample" class="table table-striped table-bordered table-sm" cellspacing="0"
+  width="100%">
+      <caption>List of Employees</caption>
+      <thead>
+        <tr>
     <th><%= t 'employee.index.id' %></th>
     <th><%= t 'employee.index.name' %></th>
     <th><%= t 'employee.index.email' %></th>
@@ -62,7 +19,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <th><%= t 'employee.index.team_id' %></th>
     <th><%= t 'users.index.Show Individual' %></th>
   </tr>
-
+  
+      </thead>
+      <tbody>
   <% @employees = Employee.all%>
 
   <% @employees.each do |employee| %>
@@ -76,15 +35,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <td><%= Team.find(employee.team_id).name %></td>
     <td>
     <p>
-      <%= link_to I18n.t('employee.index.Show This Emp'), employee %>
+    
+          
+            <%= link_to I18n.t('employee.index.Show This Emp'), employee , class: "btn btn-primary p-1 py-0" %>
+            <%= button_to I18n.t('button.delete'),{ action: "destroy", id: employee.id },
+                                method: :delete, data: { confirm: "Are you sure?" } ,
+                                class: "btn btn-danger p-1 py-0"%>
     </p></td>
     </tr>
     
   <% end %>
+       </tbody>
   </table>
 </div>
-<br>
-<a href='http://localhost:3000/employees/new' class="w3-button w3-white w3-padding-32"><i class="fa fa-diamond w3-margin-right"></i><%= t 'button.newemp'%></a>
-<br>
-<br>
-<a href='http://localhost:3000' class="w3-button w3-white w3-padding-32"><i class="fa fa-diamond w3-margin-right"></i><%= t 'button.back'%></a>
