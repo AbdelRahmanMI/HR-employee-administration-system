@@ -1,0 +1,10 @@
+
+    <h1><b><%= t 'target.index.New target' %></b></h1>
+    
+<%= render "form", mission: @mission %>
+
+<br>
+
+<div>
+  <%= link_to I18n.t('button.back'), missions_path , class: "btn btn-primary p-1 py-0" %>
+</div>

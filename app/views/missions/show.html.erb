@@ -1,0 +1,11 @@
+
+    <h1><b><%= t 'target.index.Show this target' %></b></h1>
+<%= render @mission %>
+
+<div>
+  <%= link_to I18n.t('button.edit'), edit_mission_path(@mission) , class: "btn btn-primary p-1 py-0" %>
+
+
+  <%= button_to I18n.t('button.delete'), @mission, method: :delete , class: "btn btn-danger p-1 py-0" %>
+  <%= link_to I18n.t('button.back'), missions_path , class: "btn btn-success p-1 py-0" %>
+  </div>

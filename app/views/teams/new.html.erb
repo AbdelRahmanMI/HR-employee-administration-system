@@ -1,0 +1,10 @@
+
+    <h1><b><%=t 'team.index.NewTeam'%></b></h1>
+
+<%= render "form", team: @team %>
+
+<br>
+
+<div>
+  <%= link_to I18n.t('button.back'), teams_path , class: "btn btn-primary p-1 py-0" %>
+</div>

@@ -1,0 +1,8 @@
+<h1><b><%= t 'division.index.NewDiv'%></b></h1>
+<%= render "form", division: @division %>
+
+<br>
+
+<div>
+  <%= link_to I18n.t('button.back'), divisions_path , class: "btn btn-primary p-1 py-0" %>
+</div>

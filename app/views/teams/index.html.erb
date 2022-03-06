@@ -1,0 +1,49 @@
+<div class="container">
+    <h1><b><%= t 'team.index.teams' %></b></h1>
+    <a href='http://localhost:3000/teams/new' class="btn btn-primary pull-right"><%= t 'button.newteam' %></a>
+    <a href='http://localhost:3000' class="btn btn-success"><%= t 'button.back'%></a>
+</div>
+<br>
+<div class="table-wrapper-scroll-y my-custom-scrollbar" style="height: 525px;overflow: scroll;">
+<table id="dtDynamicVerticalScrollExample" class="table table-striped table-bordered table-sm" cellspacing="0"
+  width="100%">
+      <caption>List of Teams</caption>
+      <thead>
+        <tr>
+        <th><%= t 'team.index.id' %></th>
+        <th><%= t 'team.index.name' %></th>
+        <th><%= t 'team.index.description' %></th>
+        <th><%= t 'team.index.members' %></th>
+        <th><%= t 'team.index.team_lead' %></th>
+        <th><%= t 'users.index.Show Individual' %></th>
+      </tr>
+      </thead>
+      <tbody>
+  <% @teams = Team.all%>
+  <% @teams.each do |team| %>
+  <tr>
+    <td><%= team.id %></td>
+    <td><%= team.name %></td>
+    <td><%= team.description %></td>
+    <td><%x=2%>
+    <%while x<team.members.length%>
+    <%= Employee.find(team.members[x].to_i).name  %>
+    <% x = x+5%>
+    <%if x<team.members.length%>
+    -
+    <%end%>
+    <%end%> </td>
+    <td><%=Employee.find( team.team_lead).name %> </td>
+    <td>
+    <p>
+            <%= link_to I18n.t('team.index.Show this team'), team , class: "btn btn-primary p-1 py-0" %>
+            <%= button_to I18n.t('button.delete'),{ action: "destroy", id: team.id },
+                                method: :delete, data: { confirm: "Are you sure?" } ,
+                                class: "btn btn-danger p-1 py-0"%>
+    </p>
+    </td>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>
+</div>
