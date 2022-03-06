@@ -1,21 +1,26 @@
-<div id="<%= dom_id user %>">
+<div id="<%= dom_id user %>" class="card-group">
+  <div class="card">
+    <%if @user.image.representable?%>
+      <%= image_tag user.image , class:"card-img-top w-25" %>
+    <%end%> 
+    <div class="card-body">
 
-  <%= image_tag user.image ,style: "max-width: 250px;"%> 
-  <p>
-    <strong style="color : Red"><%= t 'users.index.Name' %>:</strong>
-    <%= user.name %>
-  </p>
+    <p>
+      <h4 style="color : Red" class="card-title" ><%= t 'users.index.Name' %>:</h4>
+      <%= user.name %>
+    </p>
 
-  <p>
-    <strong><%= t 'users.index.Email' %>:</strong>
-    <%= user.email %>
-  </p>
+    <p>
+      <strong class="card-text"><%= t 'users.index.Email' %>:</strong>
+      <%= user.email %>
+    </p>
 
-  <p>
-    <strong><%= t 'users.index.Password'%>:</strong>
-    <%= user.password %>
-  </p>
-
+    <p>
+      <strong class="card-text"><%= t 'users.index.Password'%>:</strong>
+      <%= user.password %>
+    </p>
+    </div>
+  </div>
 </div>
 
 

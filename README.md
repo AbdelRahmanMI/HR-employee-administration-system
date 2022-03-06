@@ -55,3 +55,18 @@ In This Update We made a full Interlized Pages With button to switch between Lan
 *	Main page with button
 
 *	Devise with all views
+
+===================================================================================================================================
+
+Sixth Update:
+
+In This Update we changed all our views to be same as the mockup in this link : https://app.mockplus.com/run/rp/qcgBO7VA-wNr8/nFtMBMdI8XDBp?cps=expand&rps=expand&nav=1&ha=0&la=1&fc=0&out=1&rt=0
+
+We made some changes using BootStrap version 4 and this is what we added :-
+
+*	Top navigation bar
+*	Side navigation bar
+*	Footer
+*	Tables with columns shown at the mockup that list down the items of the corresponding model
+
+- Link of the Fourth Video : 
